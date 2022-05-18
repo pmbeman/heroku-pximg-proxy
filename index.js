@@ -14,14 +14,14 @@ const PORT = process.env.PORT || 8080;
 const index = require('./pages/index');
 
 const pHeaders = {
-  Referer: 'https://www.pixiv.net',
+  Referer: 'https://www.tiktok.com',
   'User-Agent':
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.113 Safari/537.36',
 };
 
 const reverseProxy = async (ctx, path, okCb) => {
   const { data, status, headers } = await get(path, {
-    baseURL: 'https://i-cf.pximg.net',
+    baseURL: 'https://v16-webapp.tiktok.com',
     headers: pHeaders,
     responseType: 'stream',
     validateStatus: () => true,
@@ -47,7 +47,7 @@ router
     ctx.body = index({ baseURL });
   })
   .get('/favicon.ico', ctx => {
-    return get('https://www.pixiv.net/favicon.ico', {
+    return get('https://www.tiktok.com/favicon.ico', {
       headers: pHeaders,
       responseType: 'stream',
     })
