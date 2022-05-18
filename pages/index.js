@@ -3,7 +3,7 @@ module.exports = ({ baseURL }) => `<html><head><title>Pximg Proxy</title></head>
 1. ${baseURL}/{path}
    - ${baseURL}/img-original/img/0000/00/00/00/00/00/12345678_p0.png
 
-2. ${baseURL}/{pid}[/{p}]
+2. v16-webapp.${baseURL}/{path}
    - ${baseURL}/12345678    (p0)
    - ${baseURL}/12345678/0  (p0)
    - ${baseURL}/12345678/1  (p1)
